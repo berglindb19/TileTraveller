@@ -15,8 +15,6 @@ def direction_options(location1, location2):
         valid_directions = "(N)orth."
     elif (location1, location2) == (1, 2):
         valid_directions = "(N)orth or (E)ast or (S)outh."
-    elif (location1, location2) == (1, 2):
-        valid_directions = "(N)orth or (E)ast or (S)outh."
     elif (location1, location2) == (1, 3):
         valid_directions = "(E)ast or (S)outh."
     elif (location1, location2) == (2, 2):
@@ -28,7 +26,7 @@ def direction_options(location1, location2):
     elif (location1, location2) == (3, 3):
         valid_directions = "(S)outh or (W)est."
     elif (location1, location2) == (3, 2):
-        valid_directions = "(S)outh or (W)est."
+        valid_directions = "(N)orth or (S)outh."
     elif (location1, location2) == (3, 1):
         valid_directions = "(N)orth."
     return valid_directions
@@ -57,11 +55,11 @@ def is_victory(location_NS, location_EW):
     else:
         return False
 
-vicoty = False
+victory = False
 location_NS = 1
 location_EW = 1
 
-while vicoty != True:
+while victory != True:
     valid_directions = direction_options(location_EW, location_NS)
 
     print('You can travel:', valid_directions)
@@ -84,6 +82,6 @@ while vicoty != True:
         location_NS = change_location_NS(direction_letter)
         location_EW = change_location_EW(direction_letter)
     
-    vicoty = is_victory(location_NS, location_EW)
+    victory = is_victory(location_NS, location_EW)
 
 print("Victory!")
