@@ -8,6 +8,31 @@
 # Use if-sentences for every tile to tell the user in which dircetion he can travel
 # When the user/player wins the game, at tile (3,1) the victory variable turns into True
 
+
+
+def direction_options(location1, location2):
+    if (location1, location2) == (1, 1):
+        valid_directions = "(N)orth."
+    elif (location1, location2) == (1, 2):
+        valid_directions = "(N)orth or (E)ast or (S)outh."
+    elif (location1, location2) == (1, 2):
+        valid_directions = "(N)orth or (E)ast or (S)outh."
+    elif (location1, location2) == (1, 3):
+        valid_directions = "(E)ast or (S)outh."
+    elif (location1, location2) == (2, 2):
+        valid_directions = "(S)outh or (W)est."
+    elif (location1, location2) == (2, 1):
+        valid_directions = "(N)orth."
+    elif (location1, location2) == (2, 3):
+        valid_directions = "(E)ast or (W)est."
+    elif (location1, location2) == (3, 3):
+        valid_directions = "(S)outh or (W)est."
+    elif (location1, location2) == (3, 2):
+        valid_directions = "(S)outh or (W)est."
+    elif (location1, location2) == (3, 1):
+        valid_directions = "(N)orth."
+    return valid_directions
+
 def change_location_NS(direction):
     direction = direction.lower()
     if direction == 'n':
