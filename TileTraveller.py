@@ -7,3 +7,21 @@
 # Throughout the game a loop runs while victory != False 
 # Use if-sentences for every tile to tell the user in which dircetion he can travel
 # When the user/player wins the game, at tile (3,1) the victory variable turns into True
+
+vicoty = False
+location_NS = 1
+location_EW = 1
+
+while vicoty != True:
+    valid_directions = direction_options(location_NS, location_EW)
+
+    print('You can travel:', valid_directions)
+    direction = input('Direction: ')
+
+    if direction != valid_directions:
+        print("Not a valid direction!")
+    else:
+        location_NS = change_location(direction)
+        location_EW = change_location(direction)
+    
+    vicoty = is_victory(location_NS, location_EW)
