@@ -8,6 +8,24 @@
 # Use if-sentences for every tile to tell the user in which dircetion he can travel
 # When the user/player wins the game, at tile (3,1) the victory variable turns into True
 
+def change_location_NS(direction):
+    direction = direction.lower()
+    if direction == 'n':
+        return location_NS + 1
+    if direction == 's':
+        return location_NS -1
+    else:
+        return location_NS
+
+def change_location_EW(direction):
+    direction = direction.lower()
+    if direction == 'e':
+        return location_EW + 1
+    if direction == 'w':
+        return location_EW -1
+    else:
+        return location_EW
+
 vicoty = False
 location_NS = 1
 location_EW = 1
