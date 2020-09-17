@@ -39,7 +39,7 @@ while vicoty != True:
     if direction != valid_directions:
         print("Not a valid direction!")
     else:
-        location_NS = change_location(direction)
-        location_EW = change_location(direction)
+        location_NS = change_location_NS(direction)
+        location_EW = change_location_EW(direction)
     
     vicoty = is_victory(location_NS, location_EW)
