@@ -62,15 +62,28 @@ location_NS = 1
 location_EW = 1
 
 while vicoty != True:
-    valid_directions = direction_options(location_NS, location_EW)
+    valid_directions = direction_options(location_EW, location_NS)
 
     print('You can travel:', valid_directions)
-    direction = input('Direction: ')
+    direction_letter = input('Direction: ')
 
-    if direction != valid_directions:
+    if direction_letter.lower() == "n":
+        direction = "(N)orth"
+    elif direction_letter.lower() == "s":
+        direction = "(S)outh"
+    elif direction_letter.lower() == "e":
+        direction = "(E)ast"
+    elif direction_letter.lower() == "w":
+        direction = "(W)est"
+
+
+    if valid_directions.find(direction) == -1:
         print("Not a valid direction!")
+
     else:
-        location_NS = change_location_NS(direction)
-        location_EW = change_location_EW(direction)
+        location_NS = change_location_NS(direction_letter)
+        location_EW = change_location_EW(direction_letter)
     
     vicoty = is_victory(location_NS, location_EW)
+
+print("Victory!")
