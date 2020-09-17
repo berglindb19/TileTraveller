@@ -4,7 +4,7 @@
 # When the user enters the (3,1) tile he wins, it's the victory tile. 
 # At the beginning of the game the variable named victory = False
 # Also, at the beginning of the game we need to give beginning tile, which is (1,1)
-# Throughout the game a loop runs while victory != False 
+# Throughout the game a loop runs while victory != True 
 # Use if-sentences for every tile to tell the user in which dircetion he can travel
 # When the user/player wins the game, at tile (3,1) the victory variable turns into True
 
@@ -25,6 +25,12 @@ def change_location_EW(direction):
         return location_EW -1
     else:
         return location_EW
+
+def is_victory(location_NS, location_EW):
+    if location_EW == 3 and location_NS == 1:
+        return True
+    else:
+        return False
 
 vicoty = False
 location_NS = 1
